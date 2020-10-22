@@ -21,7 +21,6 @@ class _MyAppState extends State<MyApp> {
   String input = "";
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     todos.add("Item1");
     todos.add("Item2");
