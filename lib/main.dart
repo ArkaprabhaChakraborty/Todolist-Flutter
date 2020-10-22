@@ -72,7 +72,10 @@ class _MyAppState extends State<MyApp> {
             return Dismissible(
               key: UniqueKey(),
               child: Card(
-                  child: ListTile(
+                elevation: 4,
+                margin: EdgeInsets.all(8),
+                shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                child: ListTile(
                 title: Text(todos[index]),
                 trailing: IconButton(
                     icon: Icon(Icons.delete, color: Colors.red),
