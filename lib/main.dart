@@ -48,7 +48,15 @@ class _MyAppState extends State<MyApp> {
                       input = value;
                     },
                   ),
-                  
+                  actions: <Widget>[
+                    FlatButton(
+                        onPressed: () {
+                          setState(() {
+                            todos.add(input);
+                          });
+                        },
+                        child: Text("Add"))
+                  ],
                 );
               });
         },
