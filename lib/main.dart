@@ -69,11 +69,24 @@ class _MyAppState extends State<MyApp> {
           itemCount: todos.length,
           itemBuilder: (BuildContext context, int index) {
             return Dismissible(
-                key: Key(todos[index]),
-                child: Card(
-                    child: ListTile(
-                  title: Text(todos[index]),
-                )));
+              key: UniqueKey(),
+              child: Card(
+                  child: ListTile(
+                title: Text(todos[index]),
+                trailing: IconButton(
+                    icon: Icon(Icons.delete, color: Colors.red),
+                    onPressed: () {
+                      setState(() {
+                        todos.removeAt(index);
+                      });
+                    }),
+              )),
+              onDismissed: (DismissDirection right) {
+                setState(() {
+                  todos.removeAt(index);
+                });
+              },
+            );
           }),
     );
   }
