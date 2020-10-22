@@ -18,6 +18,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   List todos = List();
+  String input = "";
   @override
   void initState() {
     // TODO: implement initState
@@ -36,12 +37,24 @@ class _MyAppState extends State<MyApp> {
         title: Text("My To-Do's"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () 
-        {
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("Add to List"),
+                  content: TextField(
+                    onChanged: (String value) {
+                      input = value;
+                    },
+                  ),
+                  
+                );
+              });
         },
-        child:Icon(
+        child: Icon(
           Icons.add,
-          color:Colors.white,
+          color: Colors.white,
         ),
       ),
       body: ListView.builder(
