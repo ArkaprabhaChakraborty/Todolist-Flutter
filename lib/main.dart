@@ -33,7 +33,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("my To-Do's"),
+        title: Text("My To-Do's"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () 
+        {
+        },
+        child:Icon(
+          Icons.add,
+          color:Colors.white,
+        ),
       ),
       body: ListView.builder(
           itemCount: todos.length,
